@@ -24,7 +24,7 @@ export const createChatSession = (systemInstruction: string): Chat => {
     config: {
       systemInstruction: systemInstruction,
       temperature: 0.8, // Slightly higher for more creative roleplay
-      maxOutputTokens: 500, // Increased to allow fuller answers
+      // maxOutputTokens removed to prevent issues with thinking budget allocation in Gemini 2.5
     },
   });
 };

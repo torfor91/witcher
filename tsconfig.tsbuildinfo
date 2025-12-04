@@ -1,0 +1,1 @@
+{"root":["./constants.ts","./types.ts","./vite-env.d.ts","./vite.config.ts","./services/geminiService.ts","./App.tsx","./index.tsx","./components/Bestiary.tsx","./components/ContractsBoard.tsx","./components/CreatureDetail.tsx","./components/GeraltInfo.tsx","./components/Legends.tsx","./components/Navigation.tsx"],"version":"5.8.3"}

@@ -1,11 +1,14 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  // Это нужно для корректной работы на GitHub Pages
-  // Если ваш репозиторий называется witcher-bestiary, то base должен быть '/witcher-bestiary/'
-  // Но './' обычно работает универсально для относительных путей
-  base: './',
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, (process as any).cwd(), '');
+  return {
+    plugins: [react()],
+    base: '/', 
+    define: {
+      'process.env.API_KEY': JSON.stringify(env.VITE_API_KEY || process.env.VITE_API_KEY)
+    }
+  }
 })
